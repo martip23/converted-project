@@ -1,7 +1,5 @@
 #include <avr/io.h>
 #include <util/delay.h>
-
-#define RED_PIN			3
 #define GREEN_PIN		4
 #define BLUE_PIN		5
 
@@ -51,10 +49,17 @@ int getDistance() {
 
     return centimeters;
 }
+=======
+#define BUZZ_ON          (PORTB |= (1<<BUZZ_PIN))
+#define BUZZ_OFF         (PORTB &= ~(1<<BUZZ_PIN))
+
+#define OUTPUT_CONFIG   (DDRB |= (1<<RED_PIN) | (1<<GREEN_PIN) | (1<<BUZZ_PIN))
+>>>>>>> 2147ceb3d353933d7bdaa29fa1565a287006e8cf
 
 
 int main(void) {
 
+<<<<<<< HEAD
     CPU_PRESCALE(2);
     SONAR_CONFIG;
 	OUTPUT_CONFIG;
@@ -62,4 +67,25 @@ int main(void) {
 	while(1){
     
 	}
+=======
+    OUTPUT_CONFIG;
+    RED_OFF;
+	GREEN_OFF;
+    BUZZ_OFF;
+
+    while(1){
+        RED_ON;
+        _delay_ms(500);
+		RED_OFF;
+        _delay_ms(500);
+		GREEN_ON;
+        _delay_ms(500);
+		GREEN_OFF;
+        _delay_ms(500);
+		YELLOW_ON;
+        _delay_ms(500);
+		YELLOW_OFF;
+        _delay_ms(500);
+    }
+>>>>>>> 2147ceb3d353933d7bdaa29fa1565a287006e8cf
 }
