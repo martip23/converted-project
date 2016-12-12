@@ -4,6 +4,7 @@ TARGET	= test
 
 CSRCS 	= $(wildcard *.c)
 ASRCS	= $(wildcard *.S)
+
 INTTBL	= FALSE
 CFLAGS  = -std=gnu99
 

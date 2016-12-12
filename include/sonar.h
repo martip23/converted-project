@@ -1,1 +1,1 @@
-int sonar();
+unsigned char sonar();
