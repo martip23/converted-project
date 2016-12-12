@@ -1,5 +1,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
+#include "../include/sonar.h"
+
 #define GREEN_PIN		4
 #define BLUE_PIN		5
 
